@@ -18,14 +18,20 @@
     <style>
         /* --- VARIABLES --- */
         :root {
-            --bg-dark-brown: #4A1A1A;
-            --bg-cream: #F9F3ED;
-            --card-green: #1B3B36;
+            --bg-dark-brown: #3D0C02;
+            /* Rich Dark Maroon/Brown */
+            --bg-cream: #FDF7F2;
+            /* Warm Cream/Beige */
+            --card-green: #112F2B;
+            /* Deep Forest Green */
             --text-dark: #2C1810;
-            --text-light: #F9F3ED;
-            --accent-gold: #D4AF37;
-            --accent-rose: #C77D87;
-            --accent-red: #C62828;
+            --text-light: #FDF7F2;
+            --accent-gold: #C5A059;
+            /* Muted Gold */
+            --accent-rose: #A6756C;
+            /* Muted Rose/Terracotta */
+            --accent-red: #8B0000;
+            /* Deep Red */
 
             --container-padding: 5%;
             --transition-speed: 0.4s;
@@ -74,7 +80,7 @@
         .btn {
             display: inline-block;
             padding: 16px 40px;
-            background: linear-gradient(135deg, var(--card-green), #2a5550);
+            background: linear-gradient(135deg, var(--card-green), #1a4a44);
             color: white;
             font-size: 0.9rem;
             letter-spacing: 1.5px;
@@ -95,7 +101,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--bg-dark-brown), #6b2828);
+            background: linear-gradient(135deg, var(--bg-dark-brown), #5a1205);
             transition: left 0.5s ease;
             z-index: -1;
         }
@@ -146,7 +152,7 @@
         header {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
             backdrop-filter: blur(10px);
-            padding: 20px var(--container-padding);
+            padding: 10px var(--container-padding);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -162,7 +168,7 @@
             color: var(--bg-dark-brown);
             font-weight: 700;
             letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #850606, #f64f65);
+            background: linear-gradient(135deg, #3D0C02, #C5A059);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -221,9 +227,12 @@
             position: relative;
             height: 100vh;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
+            /* Move to bottom */
             justify-content: center;
             overflow: hidden;
+            padding-bottom: 80px;
+            /* Offset from the very bottom */
         }
 
         .hero-video {
@@ -236,27 +245,18 @@
             z-index: 0;
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(74, 26, 26, 0.7), rgba(27, 59, 54, 0.6));
-            z-index: 1;
-        }
 
         .hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
-            color: white;
-            max-width: 900px;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            color: var(--bg-dark-brown);
+            max-width: 1100px;
+            padding: 22px 60px;
+            /* Further reduced vertical padding for smaller height */
+            background: #ffffff;
+            border: none;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
             animation: floatUp 1.2s ease-out;
         }
 
@@ -273,7 +273,7 @@
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
+            font-size: 3.375rem;
             margin-bottom: 25px;
             line-height: 1.1;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -281,7 +281,7 @@
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1rem;
             margin-bottom: 40px;
             opacity: 0.95;
             font-weight: 300;
@@ -289,19 +289,20 @@
         }
 
         .hero-content .btn {
-            background: white;
-            color: var(--bg-dark-brown);
-            border: 2px solid white;
+            background: var(--card-green);
+            color: white;
+            border: 2px solid var(--card-green);
         }
 
         .hero-content .btn:hover {
-            background: transparent;
+            background: var(--bg-dark-brown);
+            border-color: var(--bg-dark-brown);
             color: white;
         }
 
         /* --- FEATURES SECTION --- */
         .features {
-            background: linear-gradient(135deg, var(--bg-dark-brown), #6b2828);
+            background: linear-gradient(135deg, var(--bg-dark-brown), #5a1205);
             color: var(--bg-cream);
             padding: 120px var(--container-padding);
             position: relative;
@@ -492,7 +493,8 @@
         }
 
         .product-img {
-            height: 420px;
+            height: 294px;
+            /* Reduced from 420px (30%) */
             position: relative;
             overflow: hidden;
         }
@@ -524,14 +526,16 @@
         }
 
         .product-details {
-            padding: 35px;
+            padding: 25px;
+            /* Reduced from 35px */
             position: relative;
             z-index: 1;
         }
 
         .product-details h3 {
             font-size: 1.7rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            /* Reduced from 15px */
             color: white;
             letter-spacing: 0.5px;
         }
@@ -539,7 +543,8 @@
         .product-details p {
             font-size: 1rem;
             opacity: 0.88;
-            margin-bottom: 28px;
+            margin-bottom: 20px;
+            /* Reduced from 28px */
             line-height: 1.7;
         }
 
@@ -548,7 +553,8 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 25px;
+            padding-top: 18px;
+            /* Reduced from 25px */
         }
 
         .price-row span {
@@ -687,7 +693,7 @@
 
         /* --- TESTIMONIALS SECTION --- */
         .testimonials {
-            background: linear-gradient(135deg, #2a5550, var(--card-green));
+            background: linear-gradient(135deg, #112F2B, var(--card-green));
             padding: 120px var(--container-padding);
             color: white;
             position: relative;
@@ -916,7 +922,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background: linear-gradient(135deg, var(--bg-dark-brown), #3a1212);
+            background: linear-gradient(135deg, var(--bg-dark-brown), #2d0902);
             color: white;
             padding: 100px var(--container-padding) 40px;
             font-size: 0.95rem;
@@ -924,7 +930,7 @@
             overflow: hidden;
         }
 
-        footer::before {
+        /* footer::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -933,7 +939,7 @@
             height: 700px;
             background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent);
             border-radius: 50%;
-        }
+        } */
 
         .footer-grid {
             display: grid;
@@ -1035,7 +1041,7 @@
             right: 40px;
             width: 55px;
             height: 55px;
-            background: linear-gradient(135deg, var(--card-green), #2a5550);
+            background: linear-gradient(135deg, var(--card-green), #1a4a44);
             color: white;
             border: none;
             border-radius: 50%;
@@ -1061,7 +1067,7 @@
         /* --- RESPONSIVE DESIGN --- */
 
         /* Tablet & Small Laptops (1024px and down) */
-        @media (max-width: 1024px) {
+        @media (max-width: 1050px) {
             .container {
                 max-width: 95%;
             }
@@ -1117,6 +1123,8 @@
                 flex-direction: column;
                 padding: 15px var(--container-padding);
                 gap: 15px;
+                align-items: flex-start;
+                /* Align logo to the left */
             }
 
             nav {
@@ -1137,7 +1145,7 @@
 
             .icons {
                 position: absolute;
-                top: 20px;
+                top: 25px;
                 right: 20px;
             }
 
@@ -1186,7 +1194,7 @@
             }
 
             #natural-resources {
-                flex-direction: column;
+                flex-direction: column !important;
                 /* Override inline style for row-reverse */
             }
 
@@ -1197,13 +1205,6 @@
                 /* Text first */
                 text-align: center;
             }
-
-            /* Ensure images/videos come second if desired, or first. 
-               Let's keep text first for readability on mobile as per common patterns, 
-               or image first for visual impact. 
-               Given the design, Image first might look nice for "About" but Text first is usually better for "Process".
-               Let's stick to the flow: Content -> Visual.
-            */
 
             .about-img,
             .stats-img {
@@ -1306,6 +1307,10 @@
                 text-align: center;
             }
 
+            .icons {
+                top: 30px;
+            }
+
             .stat-grid {
                 grid-template-columns: 1fr;
                 /* Stack stats on very small screens */
@@ -1380,7 +1385,7 @@
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="assets/pv1.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <h1 class="fade-in">Scent of Luxury, Shine of Purity</h1>
             <p class="fade-in">Experience the perfect harmony of exquisite fragrances and professional home care
