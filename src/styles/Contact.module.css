@@ -1,0 +1,538 @@
+/* src/styles/Contact.module.css */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    position: relative;
+    height: 50vh;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1B3B36 0%, #0f2320 100%);
+    margin-top: 140px;
+    overflow: hidden;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    max-width: 800px;
+}
+
+.heroLabel {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.15);
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.heroContent h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroContent p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    opacity: 0.85;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ============================================
+   COMMON STYLES
+   ============================================ */
+.sectionLabel {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    font-weight: 600;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+    margin: 15px 0 25px;
+    border-radius: 2px;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contactSection {
+    padding: clamp(40px, 6vw, 80px) 5%;
+    background: var(--bg-cream);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Full Width Header */
+.contactHeader {
+    text-align: center;
+    margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.contactHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.contactHeader p {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.contactHeader .divider {
+    margin: 15px auto 20px;
+}
+
+/* Grid Layout - Cards on Left, Form on Right */
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: clamp(30px, 4vw, 50px);
+    align-items: start;
+}
+
+/* Swap order: cards first, form second */
+.contactCards {
+    order: 1;
+}
+
+.contactForm {
+    order: 2;
+}
+
+.contactInfo h2,
+.contactForm h2,
+.contactForm h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.contactInfo>p {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Contact Cards Column */
+.contactCards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.infoIcon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(27, 59, 54, 0.1), rgba(212, 175, 55, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.infoIcon i {
+    font-size: 1.2rem;
+    color: #1B3B36;
+}
+
+.infoContent h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--bg-dark-brown);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.infoContent p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2px 0;
+}
+
+/* Social Links */
+.socialLinks h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--bg-dark-brown);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 12px;
+}
+
+.socialIcons a {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B3B36;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.socialIcons a:hover {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Contact Form */
+.contactForm {
+    background: white;
+    padding: clamp(30px, 4vw, 45px);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.contactForm h2 {
+    margin-bottom: 5px;
+}
+
+.contactForm .divider {
+    margin: 15px 0 30px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--bg-dark-brown);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--bg-dark-brown);
+    background: #faf9f7;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: #aaa;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 16px 30px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Success Message */
+.successMessage {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.successIcon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.successMessage h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--bg-dark-brown);
+    margin-bottom: 15px;
+}
+
+.successMessage p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.resetBtn {
+    padding: 14px 30px;
+    background: none;
+    border: 2px solid var(--accent-gold);
+    border-radius: 50px;
+    color: var(--accent-gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resetBtn:hover {
+    background: var(--accent-gold);
+    color: white;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faqSection {
+    padding: clamp(40px, 6vw, 80px) 5%;
+    background: linear-gradient(180deg, #faf9f7 0%, var(--bg-cream) 100%);
+}
+
+.faqHeader {
+    text-align: center;
+    margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.faqHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.faqHeader .divider {
+    margin: 15px auto 0;
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faqCard {
+    background: white;
+    padding: clamp(20px, 3vw, 30px);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faqCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+.faqCard h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.faqCard p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 1024px) {
+    .faqGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 120px;
+        min-height: 280px;
+    }
+
+    .contactGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .faqGrid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        margin-top: 100px;
+    }
+
+    .heroLabel,
+    .sectionLabel {
+        font-size: 0.6rem;
+        padding: 8px 18px;
+    }
+
+    .infoCard {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .infoIcon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .infoIcon i {
+        font-size: 1rem;
+    }
+
+    .infoContent {
+        text-align: left;
+    }
+
+    .infoContent h3 {
+        font-size: 0.95rem;
+        margin-bottom: 3px;
+    }
+
+    .infoContent p {
+        font-size: 0.8rem;
+    }
+
+    .socialIcons {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 380px) {
+    .socialIcons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
