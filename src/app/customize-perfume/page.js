@@ -204,7 +204,6 @@ export default function CustomizePerfume() {
         <>
             {/* Hero Section */}
             <section className={styles.hero}>
-                <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <span className={styles.heroLabel}>Fully Customizable</span>
                     <h1>Design Your Perfect Perfume</h1>

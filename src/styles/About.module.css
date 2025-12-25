@@ -5,24 +5,17 @@
    ============================================ */
 .aboutHero {
     position: relative;
-    height: 60vh;
+    height: 50vh;
     min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--bg-dark-brown) 0%, #5a0a00 100%);
+    background: #5a0a00;
     margin-top: 140px;
     overflow: hidden;
 }
 
-.heroOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(199, 112, 150, 0.08) 0%, transparent 40%);
-    pointer-events: none;
-}
+
 
 .heroContent {
     position: relative;
@@ -239,18 +232,11 @@
 .statsSection {
     position: relative;
     padding: clamp(30px, 5vw, 60px) 5%;
-    background: linear-gradient(135deg, var(--bg-dark-brown) 0%, #5a0a00 100%);
+    background: #5a0a00;
     overflow: hidden;
 }
 
-.statsOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
-    pointer-events: none;
-}
+
 
 .statsContent {
     position: relative;

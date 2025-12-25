@@ -10,36 +10,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--bg-dark-brown) 0%, #5a0a00 100%);
+    background: #5a0a00;
     margin-top: 140px;
     overflow: hidden;
 }
 
-/* src/styles/CustomizePerfume.module.css */
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-.hero {
-    position: relative;
-    height: 50vh;
-    min-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--bg-dark-brown) 0%, #5a0a00 100%);
-    margin-top: 140px;
-    overflow: hidden;
-}
-
-.heroOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(199, 112, 150, 0.1) 0%, transparent 40%);
-    pointer-events: none;
-}
 
 .heroContent {
     position: relative;
@@ -392,23 +368,13 @@
 }
 
 .pricingFeatured {
-    background: linear-gradient(135deg, var(--bg-dark-brown) 0%, #5a0a00 100%);
+    background: #5a0a00;
     color: white;
     position: relative;
     overflow: hidden;
 }
 
-.pricingFeatured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(30%, -30%);
-}
+
 
 .pricingBadge {
     display: inline-block;
@@ -972,15 +938,6 @@
         max-width: 200px;
         margin: 0 auto;
     }
-}
-
-.heroOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(199, 112, 150, 0.1) 0%, transparent 40%);
-    pointer-events: none;
 }
 
 .heroContent {

@@ -29,7 +29,6 @@ export default function About() {
         <>
             {/* Hero Section */}
             <section className={styles.aboutHero}>
-                <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <span className={styles.heroLabel}>Who We Are</span>
                     <h1>The Art of Scented Living</h1>

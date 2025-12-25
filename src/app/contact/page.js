@@ -64,7 +64,6 @@ export default function Contact() {
         <>
             {/* Hero Section */}
             <section className={styles.hero}>
-                <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
                     <span className={styles.heroLabel}>Get In Touch</span>
                     <h1>We'd Love to Hear From You</h1>

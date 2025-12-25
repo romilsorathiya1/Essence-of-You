@@ -22,39 +22,39 @@ export default function Cleaners() {
                 size: "500ml",
                 price: 499,
                 originalPrice: 699,
-                image: "/assets/cleaner-spray.png",
-                desc: "Perfect for quick everyday cleaning",
+                image: "/assets/csp.png",
+                desc: "Ready to use spray for instant cleaning",
                 bestFor: "Windows, mirrors, countertops"
             },
             {
                 id: 2,
-                name: "Refill Pack",
+                name: "Liquid Refill",
                 size: "1 Litre",
                 price: 699,
                 originalPrice: 999,
-                image: "/assets/cleaner-refill.png",
-                desc: "Eco-friendly refill for your spray bottle",
-                bestFor: "Cost-effective refilling"
+                image: "/assets/clp.png",
+                desc: "Eco-friendly liquid refill for your spray bottle",
+                bestFor: "Refilling spray bottles, cost-effective"
             },
             {
                 id: 3,
-                name: "Premium Bottle",
-                size: "750ml",
-                price: 799,
-                originalPrice: 1099,
-                image: "/assets/cleaner-premium.png",
-                desc: "Elegant glass bottle with fine mist sprayer",
-                bestFor: "Luxury home decor"
+                name: "Powder Pack",
+                size: "5 Sachets",
+                price: 399,
+                originalPrice: 599,
+                image: "/assets/cpp.png",
+                desc: "Mix with water to create your cleaning solution",
+                bestFor: "Travel-friendly, long-lasting, eco-conscious"
             },
             {
                 id: 4,
                 name: "Family Pack",
-                size: "2 Litres",
+                size: "Complete Kit",
                 price: 1299,
-                originalPrice: 1799,
-                image: "/assets/cleaner-family.png",
-                desc: "Best value for large homes",
-                bestFor: "Weekly deep cleaning"
+                originalPrice: 1899,
+                image: "/assets/cfp.png",
+                desc: "Includes: Spray Bottle + Liquid Refill + Powder Pack",
+                bestFor: "Best value combo - everything you need"
             }
         ],
         usageAreas: [
@@ -120,7 +120,7 @@ export default function Cleaners() {
                                 src={product.variants[selectedVariant].image}
                                 alt={product.variants[selectedVariant].name}
                                 onError={(e) => {
-                                    e.target.src = '/assets/c1.jpg';
+                                    e.target.src = '/assets/cfp.png';
                                 }}
                             />
                         </div>
