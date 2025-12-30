@@ -1,0 +1,761 @@
+/* src/styles/About.module.css - Premium About Page Styles */
+
+/* ============================================
+   ABOUT HERO SECTION
+   ============================================ */
+.aboutHero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5a0a00;
+    margin-top: 140px;
+    overflow: hidden;
+}
+
+
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    max-width: 900px;
+}
+
+.heroLabel {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.15);
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.heroContent h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.heroContent p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ============================================
+   COMMON STYLES
+   ============================================ */
+.sectionLabel {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    font-weight: 600;
+}
+
+.divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+    margin: 20px 0 30px;
+    border-radius: 2px;
+}
+
+/* ============================================
+   STORY SECTION
+   ============================================ */
+.storySection {
+    padding: clamp(30px, 5vw, 60px) 5%;
+    background: var(--bg-cream);
+}
+
+.storyContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.storyText h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.storyText p {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.storyImage {
+    position: relative;
+}
+
+.storyImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.imageFrame {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* ============================================
+   MISSION SECTION
+   ============================================ */
+.missionSection {
+    padding: clamp(30px, 5vw, 60px) 5%;
+    background: linear-gradient(180deg, #faf9f7 0%, var(--bg-cream) 100%);
+}
+
+.missionContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(40px, 6vw, 80px);
+}
+
+.missionContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.missionContent .divider {
+    margin: 20px auto 30px;
+}
+
+.missionContent p {
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    line-height: 1.9;
+    color: #555;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(15px, 2vw, 30px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.valueCard {
+    background: white;
+    padding: clamp(25px, 3vw, 40px) clamp(15px, 2vw, 30px);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.valueCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.valueIcon {
+    width: clamp(50px, 5vw, 70px);
+    height: clamp(50px, 5vw, 70px);
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(199, 112, 150, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.valueIcon i {
+    font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+    color: var(--accent-gold);
+}
+
+.valueCard h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.valueCard p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+.statsSection {
+    position: relative;
+    padding: clamp(30px, 5vw, 60px) 5%;
+    background: #5a0a00;
+    overflow: hidden;
+}
+
+
+
+.statsContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.statsContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: white;
+    margin-bottom: clamp(30px, 5vw, 60px);
+    font-weight: 500;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 3vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.statCard {
+    text-align: center;
+    padding: clamp(15px, 2vw, 30px);
+}
+
+.statCard h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.statCard p {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+.teamSection {
+   padding: clamp(30px, 5vw, 60px) 5%;
+    background: var(--bg-cream);
+}
+
+.teamHeader {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto clamp(40px, 6vw, 80px);
+}
+
+.teamHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.teamHeader .divider {
+    margin: 20px auto 30px;
+}
+
+.teamHeader p {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: #666;
+    line-height: 1.8;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teamCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.teamCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.teamImage {
+    height: clamp(200px, 25vw, 280px);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(199, 112, 150, 0.1));
+}
+
+.teamImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.teamCard:hover .teamImage img {
+    transform: scale(1.1);
+}
+
+.teamCard h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    color: var(--bg-dark-brown);
+    margin: 20px 0 5px;
+    font-weight: 500;
+}
+
+.teamCard span {
+    display: block;
+    font-size: clamp(0.75rem, 1vw, 0.85rem);
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.teamCard p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: #666;
+    padding: 0 15px 25px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   JOURNEY/TIMELINE SECTION - FIXED
+   ============================================ */
+.journeySection {
+    padding: clamp(30px, 5vw, 60px) 5%;
+    background: linear-gradient(180deg, var(--bg-cream) 0%, #faf9f7 100%);
+}
+
+.journeyHeader {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto clamp(40px, 6vw, 80px);
+}
+
+.journeyHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.journeyHeader .divider {
+    margin: 20px auto 0;
+}
+
+/* Timeline Container */
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Center Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-gold), var(--accent-rose));
+    border-radius: 3px;
+}
+
+/* Timeline Item */
+.timelineItem {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timelineItem:last-child {
+    margin-bottom: 0;
+}
+
+/* Right side items */
+.timelineRight {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+/* Marker (Circle with Year) */
+.timelineMarker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timelineYear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+    border-radius: 50%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Content Box */
+.timelineContent {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    margin-right: 60px;
+}
+
+.timelineRight .timelineContent {
+    text-align: left;
+    margin-right: 0;
+    margin-left: 60px;
+}
+
+.timelineContent h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    color: var(--bg-dark-brown);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.timelineContent p {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.ctaSection {
+    padding: clamp(30px, 5vw, 60px) 5%;
+    background: linear-gradient(135deg, #1B3B36 0%, #0f2320 100%);
+    text-align: center;
+}
+
+.ctaContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.ctaContent p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 35px;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet - Large */
+@media (max-width: 1024px) {
+    .valuesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .teamGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Timeline adjustments for tablet */
+    .timelineContent {
+        max-width: calc(50% - 70px);
+        margin-right: 50px;
+    }
+
+    .timelineRight .timelineContent {
+        margin-left: 50px;
+    }
+
+    .timelineYear {
+        width: 70px;
+        height: 70px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet - Small */
+@media (max-width: 900px) {
+    .teamGrid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile Landscape & Small Tablet */
+@media (max-width: 768px) {
+    .aboutHero {
+        height: auto;
+        min-height: 50vh;
+        margin-top: 120px;
+        padding: 60px 20px;
+    }
+
+    .storyContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .storyImage {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .imageFrame {
+        top: -10px;
+        right: -10px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Timeline - Vertical Single Column */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timelineItem,
+    .timelineRight {
+        justify-content: flex-start;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+
+    .timelineMarker {
+        left: 30px;
+    }
+
+    .timelineYear {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+
+    .timelineContent,
+    .timelineRight .timelineContent {
+        max-width: 100%;
+        margin: 0;
+        text-align: left;
+        padding: 20px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+    .aboutHero {
+        margin-top: 100px;
+        padding: 40px 15px;
+    }
+
+    .heroLabel {
+        font-size: 0.65rem;
+        padding: 8px 20px;
+        letter-spacing: 3px;
+    }
+
+    .sectionLabel {
+        font-size: 0.6rem;
+        padding: 10px 20px;
+        letter-spacing: 3px;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+
+    .valueCard {
+        padding: 25px 20px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Smaller timeline */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timelineItem,
+    .timelineRight {
+        padding-left: 60px;
+    }
+
+    .timelineMarker {
+        left: 20px;
+    }
+
+    .timelineYear {
+        width: 45px;
+        height: 45px;
+        font-size: 0.85rem;
+    }
+
+    .timelineContent,
+    .timelineRight .timelineContent {
+        padding: 15px;
+    }
+
+    .timelineItem {
+        margin-bottom: 40px;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 380px) {
+
+    .heroLabel,
+    .sectionLabel {
+        font-size: 0.55rem;
+        padding: 8px 15px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .statCard h3 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1600px) {
+
+    .storyContent,
+    .valuesGrid,
+    .statsGrid,
+    .teamGrid,
+    .timeline {
+        max-width: 1500px;
+    }
+
+    .timelineContent {
+        max-width: calc(50% - 100px);
+        margin-right: 80px;
+    }
+
+    .timelineRight .timelineContent {
+        margin-left: 80px;
+    }
+
+    .timelineYear {
+        width: 90px;
+        height: 90px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 2000px) {
+    .aboutHero {
+        height: 50vh;
+    }
+
+    .heroContent h1 {
+        font-size: 5rem;
+    }
+
+    .storyText h2,
+    .missionContent h2,
+    .statsContent h2,
+    .teamHeader h2,
+    .journeyHeader h2,
+    .ctaContent h2 {
+        font-size: 4rem;
+    }
+}
