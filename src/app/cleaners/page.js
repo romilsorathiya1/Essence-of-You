@@ -5,24 +5,18 @@ import styles from '../../styles/Cleaners.module.css';
 export default function Cleaners() {
     const [selectedVariant, setSelectedVariant] = useState(0);
     const [quantity, setQuantity] = useState(1);
-<<<<<<< HEAD
     const [selectedGalleryImage, setSelectedGalleryImage] = useState(0);
-=======
->>>>>>> 3a297268bf7c915c31598a89651be952384a392a
 
     const product = {
         name: "All-In-One Premium Cleaner",
         tagline: "One Solution for Every Surface",
         description: "Experience the power of luxury cleaning with our revolutionary all-in-one formula. Designed for windows, tiles, floors, countertops, and more – all with a signature scent that transforms cleaning into an indulgence.",
-<<<<<<< HEAD
         gallery: [
             "/assets/cbottle.png",
             "/assets/ckit.png",
             "/assets/csteps.png",
             "/assets/crefill.png"
         ],
-=======
->>>>>>> 3a297268bf7c915c31598a89651be952384a392a
         features: [
             { icon: "fas fa-check-circle", title: "Multi-Surface", desc: "Works on glass, tiles, marble, wood & more" },
             { icon: "fas fa-leaf", title: "Eco-Friendly", desc: "Made with natural, biodegradable ingredients" },
@@ -31,34 +25,15 @@ export default function Cleaners() {
         variants: [
             {
                 id: 1,
-<<<<<<< HEAD
                 name: "Refill Pack",
                 size: "1 Litre",
                 price: 699,
                 originalPrice: 999,
                 image: "/assets/crefill.png",
-=======
-                name: "Spray Bottle",
-                size: "500ml",
-                price: 499,
-                originalPrice: 699,
-                image: "/assets/csp.png",
-                desc: "Ready to use spray for instant cleaning",
-                bestFor: "Windows, mirrors, countertops"
-            },
-            {
-                id: 2,
-                name: "Liquid Refill",
-                size: "1 Litre",
-                price: 699,
-                originalPrice: 999,
-                image: "/assets/clp.png",
->>>>>>> 3a297268bf7c915c31598a89651be952384a392a
                 desc: "Eco-friendly liquid refill for your spray bottle",
                 bestFor: "Refilling spray bottles, cost-effective"
             },
             {
-<<<<<<< HEAD
                 id: 2,
                 name: "Full Kit",
                 size: "Complete Kit",
@@ -66,25 +41,6 @@ export default function Cleaners() {
                 originalPrice: 1899,
                 image: "/assets/ckit.png",
                 desc: "Includes: Spray Bottle + Liquid Refill + Cleaning Accessories",
-=======
-                id: 3,
-                name: "Powder Pack",
-                size: "5 Sachets",
-                price: 399,
-                originalPrice: 599,
-                image: "/assets/cpp.png",
-                desc: "Mix with water to create your cleaning solution",
-                bestFor: "Travel-friendly, long-lasting, eco-conscious"
-            },
-            {
-                id: 4,
-                name: "Family Pack",
-                size: "Complete Kit",
-                price: 1299,
-                originalPrice: 1899,
-                image: "/assets/cfp.png",
-                desc: "Includes: Spray Bottle + Liquid Refill + Powder Pack",
->>>>>>> 3a297268bf7c915c31598a89651be952384a392a
                 bestFor: "Best value combo - everything you need"
             }
         ],
@@ -219,7 +175,6 @@ export default function Cleaners() {
                     </div>
                 </div>
             </section>
-<<<<<<< HEAD
             {/* Product Gallery Section */}
             <section className={styles.gallerySection}>
                 <div className={`${styles.galleryHeader} reveal`}>
@@ -260,8 +215,6 @@ export default function Cleaners() {
                     </div>
                 </div>
             </section>
-=======
->>>>>>> 3a297268bf7c915c31598a89651be952384a392a
 
             {/* Features Section */}
             <section className={styles.featuresSection}>
