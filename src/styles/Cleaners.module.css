@@ -430,6 +430,7 @@
 }
 
 /* ============================================
+<<<<<<< HEAD
    PRODUCT GALLERY SECTION
    ============================================ */
 .gallerySection {
@@ -517,6 +518,8 @@
 }
 
 /* ============================================
+=======
+>>>>>>> 3a297268bf7c915c31598a89651be952384a392a
    USAGE SECTION
    ============================================ */
 .usageSection {
@@ -728,10 +731,13 @@
         grid-template-columns: 1fr 1fr;
         gap: 30px 15px;
     }
+<<<<<<< HEAD
 
     .galleryThumbnails {
         grid-template-columns: repeat(2, 1fr);
     }
+=======
+>>>>>>> 3a297268bf7c915c31598a89651be952384a392a
 }
 
 @media (max-width: 576px) {
