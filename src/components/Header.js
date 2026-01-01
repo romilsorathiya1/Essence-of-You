@@ -98,7 +98,6 @@ export default function Header() {
           </ul>
         </nav>
         <div className={styles.icons}>
-          <i className="fas fa-search"></i>
           <i className="fas fa-user"></i>
           <i className="fas fa-shopping-bag"></i>
         </div>

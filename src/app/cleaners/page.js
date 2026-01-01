@@ -25,16 +25,6 @@ export default function Cleaners() {
         variants: [
             {
                 id: 1,
-                name: "Refill Pack",
-                size: "1 Litre",
-                price: 699,
-                originalPrice: 999,
-                image: "/assets/crefill.png",
-                desc: "Eco-friendly liquid refill for your spray bottle",
-                bestFor: "Refilling spray bottles, cost-effective"
-            },
-            {
-                id: 2,
                 name: "Full Kit",
                 size: "Complete Kit",
                 price: 1299,
@@ -42,6 +32,16 @@ export default function Cleaners() {
                 image: "/assets/ckit.png",
                 desc: "Includes: Spray Bottle + Liquid Refill + Cleaning Accessories",
                 bestFor: "Best value combo - everything you need"
+            },
+               {
+                id: 2,
+                name: "Refill Pack",
+                size: "1 Litre",
+                price: 699,
+                originalPrice: 999,
+                image: "/assets/crefill.png",
+                desc: "Eco-friendly liquid refill for your spray bottle",
+                bestFor: "Refilling spray bottles, cost-effective"
             }
         ],
         usageAreas: [
