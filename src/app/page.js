@@ -68,8 +68,8 @@ export default function Home() {
         </video>
 
         <div className={styles.heroContent}>
-          <h1>Scent of Luxury, Shine of Purity</h1>
-          <p>Experience the perfect harmony of exquisite fragrances and professional home care solutions</p>
+          <h1>Scent of Luxury, Essence of You</h1>
+          <p>Experience the perfect harmony of exquisite fragrances and bespoke perfumes crafted to define your unique identity</p>
           <button className="btn">Explore Collection</button>
         </div>
       </section>
@@ -171,85 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cleaners Section */}
-      <section className={styles.products} id="cleaners">
-        <div className="text-center reveal">
-          <h2 className={styles.sectionTitle}>Premium Cleaning Solutions</h2>
-          <div className={styles.divider}></div>
-          <p className={styles.sectionSubtitle}>Professional-grade cleaners infused with luxury fragrances</p>
-        </div>
-        <div className={styles.productGrid}>
 
-          {/* Cleaner 1 */}
-          <div className={`${styles.productCard} reveal`}>
-            <div className={styles.productImg}>
-              <span className={styles.tag}>Bestseller</span>
-              <img src="/assets/c2.png" alt="Tile Cleaner" />
-            </div>
-            <div className={styles.productDetails}>
-              <h3>Forest Floor Tile Wash</h3>
-              <p>Heavy-duty cleaner infused with notes of pine and cedarwood. Removes stubborn grime while leaving a luxurious forest scent.</p>
-              <div className={styles.priceRow}>
-                <span>$24.00</span>
-                <button className={styles.addBtn} onClick={handleAddToCart}>Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Cleaner 2 */}
-          <div className={`${styles.productCard} reveal`}>
-            <div className={styles.productImg}>
-              <img src="/assets/c3.png" alt="Surface Spray" />
-            </div>
-            <div className={styles.productDetails}>
-              <h3>Citrus Bloom Surface Spray</h3>
-              <p>Refreshing multipurpose cleaner with zesty orange blossom and bergamot. Perfect for countertops and glass surfaces.</p>
-              <div className={styles.priceRow}>
-                <span>$28.00</span>
-                <button className={styles.addBtn} onClick={handleAddToCart}>Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Cleaner 3 */}
-          <div className={`${styles.productCard} reveal`}>
-            <div className={styles.productImg}>
-              <span className={styles.tag}>New</span>
-              <img src="/assets/c5.png" alt="Floor Polish" />
-            </div>
-            <div className={styles.productDetails}>
-              <h3>Lavender Dreams Floor Polish</h3>
-              <p>Gentle yet effective floor polish with calming lavender essence. Safe for hardwood and laminate flooring.</p>
-              <div className={styles.priceRow}>
-                <span>$32.00</span>
-                <button className={styles.addBtn} onClick={handleAddToCart}>Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Professional Cleaning Made Simple - Now after Premium Cleaning Solutions */}
-      <section className={`${styles.showcaseSection} ${styles.cleaningShowcase}`} id="cleaning-process">
-        <div className={styles.showcaseContent}>
-          <div className={`${styles.showcaseText} reveal`}>
-            <span className={styles.showcaseLabel}>Expert Guide</span>
-            <h2 className={styles.showcaseTitle}>Professional Cleaning Made Simple</h2>
-            <div className={styles.showcaseDivider}></div>
-            <p>Watch our expert guide on achieving spotless results with our premium cleaning products. Our step-by-step tutorial shows you the most effective techniques for using our cleaners.</p>
-            <p className={styles.showcaseHighlight}>Learn the secrets to maintaining a spotless home with minimal effort. Our professional-grade formulas work harder so you don't have to.</p>
-            <button className="btn">Watch Tutorial</button>
-          </div>
-          <div className={`${styles.showcaseMedia} reveal`}>
-            <div className={styles.showcaseFrame}></div>
-            <video autoPlay muted loop playsInline>
-              <source src="/assets/cp1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </section>
 
       {/* Crafted from Natural Resources */}
       <section className={`${styles.showcaseSection} ${styles.naturalShowcase}`} id="natural-resources">
@@ -258,8 +180,8 @@ export default function Home() {
             <span className={styles.showcaseLabel}>Our Philosophy</span>
             <h2 className={styles.showcaseTitle}>Crafted from Natural Resources</h2>
             <div className={styles.showcaseDivider}></div>
-            <p>Discover how we source the finest natural ingredients and transform them into luxury products that care for your home and the environment.</p>
-            <p className={styles.showcaseHighlight}>From sustainable harvesting to eco-friendly production, every step of our process honors nature while delivering premium quality you can trust.</p>
+            <p>Discover how we source the finest natural ingredients and transform them into luxury perfumes that capture your essence and celebrate individuality.</p>
+            <p className={styles.showcaseHighlight}>From sustainable harvesting to artisanal craftsmanship, every step of our process honors nature while delivering premium quality fragrances you can trust.</p>
             <button className="btn">Learn More</button>
           </div>
           <div className={`${styles.showcaseMedia} reveal`}>
@@ -273,9 +195,9 @@ export default function Home() {
         </div>
       </section>
 
-      
 
-      
+
+
 
       {/* Excellence in Every Drop - Stats Section */}
       <section className={styles.excellenceSection}>
@@ -284,7 +206,7 @@ export default function Home() {
           <span className={styles.showcaseLabel}>Our Commitment</span>
           <h2 className={styles.excellenceTitle}>Excellence in Every Drop</h2>
           <div className={styles.showcaseDivider}></div>
-          <p>We blend cutting-edge science with traditional artistry. Our cleaners are tough on grime but gentle on the environment, while our perfumes are crafted using time-honored techniques from Grasse, France.</p>
+          <p>We blend cutting-edge science with traditional artistry. Our perfumes are crafted using time-honored techniques from Grasse, France, combining natural ingredients with modern innovation.</p>
         </div>
 
         <div className={styles.excellenceStats}>
@@ -316,10 +238,10 @@ export default function Home() {
         <div className={styles.eleganceContent}>
           <div className={`${styles.eleganceText} reveal`}>
             <span className={styles.showcaseLabel}>Our Story</span>
-            <h2 className={styles.eleganceTitle}>Where Elegance Meets Cleanliness</h2>
+            <h2 className={styles.eleganceTitle}>Where Elegance Meets Individuality</h2>
             <div className={styles.showcaseDivider}></div>
-            <p>We believe your home should be as luxurious as your personal style. That's why we've created a revolutionary line that combines haute parfumerie with professional-grade cleaning solutions.</p>
-            <p>Transform your daily routine into a ritual of indulgence. Experience the synergy of citrus top notes in your tile cleaner and the same exquisite essence in your signature scent.</p>
+            <p>We believe your personal fragrance should be as unique as you are. That's why we've created a revolutionary line of haute parfumerie that allows you to express your individual essence.</p>
+            <p>Transform your daily routine into a ritual of indulgence. Experience the artistry of fine perfumery with scents that evolve and adapt to your unique chemistry.</p>
             <button className="btn">Discover Our Story</button>
           </div>
           <div className={`${styles.eleganceImage} reveal`}>
@@ -336,20 +258,14 @@ export default function Home() {
           <div className={styles.divider}></div>
         </div>
 
-        <details className={`${styles.faqDetails} reveal`}>
-          <summary className={styles.faqSummary}>Are your products safe for marble and natural stone?</summary>
-          <p>Absolutely! Our pH-neutral formulas are specifically designed to be safe on all natural stone surfaces including marble, travertine, and slate. They clean effectively without stripping protective sealants.</p>
-        </details>
+
 
         <details className={`${styles.faqDetails} reveal`}>
           <summary className={styles.faqSummary}>How long does your perfume scent last?</summary>
           <p>Our Eau de Parfum contains 20% fragrance oil concentration, ensuring the scent lasts 6-8 hours on skin and up to 24 hours on fabrics. The fragrance evolves beautifully throughout the day with distinct top, heart, and base notes.</p>
         </details>
 
-        <details className={`${styles.faqDetails} reveal`}>
-          <summary className={styles.faqSummary}>Can I use your cleaners around pets and children?</summary>
-          <p>Yes! We use non-toxic, plant-based surfactants that are completely safe for pets and children once dry. All our products are cruelty-free and free from harsh chemicals like ammonia, bleach, and phthalates.</p>
-        </details>
+
 
         <details className={`${styles.faqDetails} reveal`}>
           <summary className={styles.faqSummary}>Do you offer refills or sustainable packaging?</summary>
@@ -357,8 +273,8 @@ export default function Home() {
         </details>
 
         <details className={`${styles.faqDetails} reveal`}>
-          <summary className={styles.faqSummary}>What makes your products different from competitors?</summary>
-          <p>We're the only brand that creates a cohesive scent experience between personal fragrances and home care products. Our master perfumers ensure that your signature scent can extend throughout your entire living space, creating a harmonious aromatic environment.</p>
+          <summary className={styles.faqSummary}>What makes your perfumes different from competitors?</summary>
+          <p>We offer complete customization of your fragrance, allowing you to create a truly unique signature scent. Our master perfumers use traditional techniques from Grasse, France, combined with the finest natural ingredients to ensure exceptional quality and longevity.</p>
         </details>
       </section>
 

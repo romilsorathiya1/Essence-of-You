@@ -4,8 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Essence of You | Luxury Fragrance & Home Care',
-  description: 'Essence of You - Premium luxury fragrances and professional tile cleaners.',
+  title: 'Essence of You | Luxury Fragrances',
+  description: 'Essence of You - Premium luxury fragrances and custom perfumes crafted to define your unique essence.',
 };
 
 export default function RootLayout({ children }) {

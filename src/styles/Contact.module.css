@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1B3B36 0%, #0f2320 100%);
+    background: #5a0a00;
     margin-top: 140px;
     overflow: hidden;
 }

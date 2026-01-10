@@ -25,7 +25,7 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h4>Essence of You</h4>
             <p>
-              Merging the world of fine fragrance with professional home care. Elevate your everyday life with luxury that's sustainable and effective.
+              Creating fine fragrances that define your unique essence. Elevate your everyday life with luxury perfumes that are sustainable and captivating.
             </p>
             <div className={styles.socialIcons}>
               <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
@@ -39,7 +39,6 @@ export default function Footer() {
             <ul>
               <li><a href="#products">All Products</a></li>
               <li><a href="#perfumes">Perfumes</a></li>
-              <li><a href="#cleaners">Cleaners</a></li>
               <li><a href="#products">Gift Sets</a></li>
               <li><a href="#products">Bestsellers</a></li>
             </ul>

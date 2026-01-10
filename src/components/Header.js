@@ -90,10 +90,9 @@ export default function Header() {
         <Link href="/" className={styles.logo}>Essence of You</Link>
         <nav className={styles.nav}>
           <ul>
-            {/* <li><Link href="/">Home</Link></li> */}
+            <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/customize-perfume">Customize Perfume</Link></li>
-            <li><Link href="/cleaners">Cleaners</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </nav>

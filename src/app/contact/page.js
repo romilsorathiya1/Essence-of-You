@@ -78,7 +78,7 @@ export default function Contact() {
                     <span className={styles.sectionLabel}>Contact Info</span>
                     <h2>Let's Start a Conversation</h2>
                     <div className={styles.divider}></div>
-                    <p>Whether you have a question about our perfumes, cleaners, custom orders, or anything else, our team is ready to answer all your questions.</p>
+                    <p>Whether you have a question about our perfumes, custom orders, or anything else, our team is ready to answer all your questions.</p>
                 </div>
 
                 {/* Form and Contact Cards Side by Side */}
@@ -140,7 +140,7 @@ export default function Contact() {
                                         >
                                             <option value="">Select a subject</option>
                                             <option value="custom-perfume">Custom Perfume Inquiry</option>
-                                            <option value="cleaners">Cleaners Query</option>
+
                                             <option value="order">Order Status</option>
                                             <option value="wholesale">Wholesale/Bulk Order</option>
                                             <option value="feedback">Feedback</option>
@@ -263,9 +263,10 @@ export default function Contact() {
                         <p>Take our quiz, receive 3 samples, pick your favorite, and we create your full-size bottle.</p>
                     </div>
                     <div className={`${styles.faqCard} reveal`}>
-                        <h3>Is the cleaner safe for all surfaces?</h3>
-                        <p>Yes! Our all-in-one cleaner is safe for glass, tiles, marble, wood, and most surfaces.</p>
+                        <h3>Are your perfumes cruelty-free?</h3>
+                        <p>Yes! All our perfumes are 100% cruelty-free and vegan. We never test on animals.</p>
                     </div>
+
                 </div>
             </section>
         </>
