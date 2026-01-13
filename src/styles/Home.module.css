@@ -1570,6 +1570,376 @@
 }
 
 /* ============================================
+   WHY USE SECTION - Emotional Connection
+   ============================================ */
+.whyUseSection {
+  padding: 100px var(--container-padding);
+  background: linear-gradient(135deg, #1a0a08 0%, #2d1210 50%, #1a0a08 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.whyUseBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(199, 112, 150, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.whyUseSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+}
+
+.whyUseSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+}
+
+.whyUseContent {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.whyUseLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+  padding: 14px 32px;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.whyUseTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 25px;
+  line-height: 1.15;
+  letter-spacing: 1px;
+}
+
+.whyUseTitle .highlight {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.whyUseIntro {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 750px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* Emotional Cards Grid */
+.emotionalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.emotionalCard {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.emotionalCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  border-radius: 24px 24px 0 0;
+}
+
+.emotionalCard::after {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.emotionalCard:hover {
+  transform: translateY(-12px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.1);
+}
+
+.emotionalCard:hover::before {
+  transform: scaleX(1);
+}
+
+.emotionalCard:hover::after {
+  opacity: 1;
+}
+
+.emotionalIcon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(199, 112, 150, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.emotionalIcon::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.5s ease;
+}
+
+.emotionalIcon i {
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+  transition: all 0.4s ease;
+}
+
+.emotionalCard:hover .emotionalIcon {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+  border-color: transparent;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.emotionalCard:hover .emotionalIcon::after {
+  inset: -10px;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.emotionalCard:hover .emotionalIcon i {
+  color: white;
+  transform: scale(1.1);
+}
+
+.emotionalCardContent h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.emotionalCardContent > p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.85;
+  margin-bottom: 25px;
+}
+
+.emotionalCardContent em {
+  color: var(--accent-gold);
+  font-style: italic;
+}
+
+.emotionalQuote {
+  padding: 20px 25px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(199, 112, 150, 0.05));
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 0 12px 12px 0;
+  position: relative;
+}
+
+.emotionalQuote span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Why Use CTA */
+.whyUseCta {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+}
+
+.whyUseCta p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Why Use Section Responsive */
+@media (max-width: 1100px) {
+  .emotionalGrid {
+    gap: 30px;
+  }
+  
+  .emotionalCard {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .emotionalGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .whyUseTitle {
+    font-size: 2.8rem;
+  }
+  
+  .whyUseIntro {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyUseSection {
+    padding: 80px var(--container-padding);
+  }
+  
+  .whyUseTitle {
+    font-size: 2.4rem;
+  }
+  
+  .emotionalCard {
+    padding: 35px 30px;
+  }
+  
+  .emotionalIcon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+  }
+  
+  .emotionalIcon i {
+    font-size: 1.5rem;
+  }
+  
+  .emotionalCardContent h3 {
+    font-size: 1.5rem;
+  }
+  
+  .emotionalCardContent > p {
+    font-size: 1rem;
+  }
+  
+  .whyUseCta p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyUseSection {
+    padding: 60px var(--container-padding);
+  }
+  
+  .whyUseLabel {
+    font-size: 0.65rem;
+    padding: 10px 22px;
+    letter-spacing: 2px;
+  }
+  
+  .whyUseTitle {
+    font-size: 2rem;
+  }
+  
+  .whyUseIntro {
+    font-size: 1rem;
+  }
+  
+  .whyUseContent {
+    margin-bottom: 50px;
+  }
+  
+  .emotionalCard {
+    padding: 30px 25px;
+  }
+  
+  .emotionalIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .emotionalIcon i {
+    font-size: 1.3rem;
+  }
+  
+  .emotionalCardContent h3 {
+    font-size: 1.35rem;
+  }
+  
+  .emotionalQuote {
+    padding: 15px 20px;
+  }
+  
+  .emotionalQuote span {
+    font-size: 0.9rem;
+  }
+  
+  .whyUseCta p {
+    font-size: 1.15rem;
+  }
+}
+
+/* ============================================
    ELEGANCE SECTION
    ============================================ */
 .eleganceSection {

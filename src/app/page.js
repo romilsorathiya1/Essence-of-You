@@ -74,6 +74,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Essence of You Section - Emotional Connection */}
+      <section className={styles.whyUseSection}>
+        <div className={styles.whyUseBackground}></div>
+        <div className={`${styles.whyUseContent} reveal`}>
+          <span className={styles.whyUseLabel}>Why Essence of You?</span>
+          <h2 className={styles.whyUseTitle}>Because You Deserve to Be <span className={styles.highlight}>Remembered</span></h2>
+          <div className={styles.showcaseDivider}></div>
+          <p className={styles.whyUseIntro}>A fragrance isn't just a scent—it's your invisible signature. It's the memory you leave behind, the confidence you carry, and the story only you can tell.</p>
+        </div>
+
+        <div className={styles.emotionalGrid}>
+          {/* Card 1 - Memory */}
+          <div className={`${styles.emotionalCard} reveal`}>
+            <div className={styles.emotionalIcon}>
+              <i className="fas fa-heart"></i>
+            </div>
+            <div className={styles.emotionalCardContent}>
+              <h3>Create Lasting Memories</h3>
+              <p>Scent is the strongest sense tied to memory. When someone catches your fragrance, they don't just smell perfume—they remember <em>you</em>. Your laugh. Your warmth. Your presence.</p>
+              <div className={styles.emotionalQuote}>
+                <span>"They forgot what you said, but never how you made them feel."</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 - Confidence */}
+          <div className={`${styles.emotionalCard} reveal`}>
+            <div className={styles.emotionalIcon}>
+              <i className="fas fa-crown"></i>
+            </div>
+            <div className={styles.emotionalCardContent}>
+              <h3>Wear Your Confidence</h3>
+              <p>The right fragrance transforms how you carry yourself. It's that extra layer of self-assurance before a big meeting, a first date, or simply walking into a room knowing you're unforgettable.</p>
+              <div className={styles.emotionalQuote}>
+                <span>"Your scent arrives before you do—and lingers after you leave."</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 - Identity */}
+          <div className={`${styles.emotionalCard} reveal`}>
+            <div className={styles.emotionalIcon}>
+              <i className="fas fa-star"></i>
+            </div>
+            <div className={styles.emotionalCardContent}>
+              <h3>Define Your Identity</h3>
+              <p>You're not like everyone else—why should your fragrance be? Our customizable perfumes let you craft a scent as unique as your fingerprint. This is your essence, your story, <em>your signature</em>.</p>
+              <div className={styles.emotionalQuote}>
+                <span>"Be yourself; everyone else is already taken."</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4 - Self-Care */}
+          <div className={`${styles.emotionalCard} reveal`}>
+            <div className={styles.emotionalIcon}>
+              <i className="fas fa-spa"></i>
+            </div>
+            <div className={styles.emotionalCardContent}>
+              <h3>A Daily Act of Self-Love</h3>
+              <p>Applying perfume isn't just routine—it's a ritual. A moment where you pause, breathe, and remind yourself that you're worth every beautiful thing. Because self-care isn't selfish; it's essential.</p>
+              <div className={styles.emotionalQuote}>
+                <span>"Start each day with intention, end it with gratitude."</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`${styles.whyUseCta} reveal`}>
+          <p>Ready to discover the fragrance that tells your story?</p>
+          <button className="btn">Find Your Essence</button>
+        </div>
+      </section>
+
       {/* perfumes Section */}
       <section className={styles.process} id="how-to-use">
         <div className={`${styles.processContent} reveal`}>
