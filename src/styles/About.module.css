@@ -499,7 +499,7 @@
    ============================================ */
 .ctaSection {
     padding: clamp(30px, 5vw, 60px) 5%;
-    background: linear-gradient(135deg, #1B3B36 0%, #0f2320 100%);
+    background:#112F2B;
     text-align: center;
 }
 

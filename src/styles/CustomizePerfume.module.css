@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #5a0a00;
+    background: #112F2B;
     margin-top: 140px;
     overflow: hidden;
 }
@@ -1276,7 +1276,7 @@
    ============================================ */
 .ctaSection {
     padding: clamp(60px, 10vw, 100px) 5%;
-    background: linear-gradient(135deg, #1B3B36 0%, #0f2320 100%);
+    background:#112F2B;
     text-align: center;
 }
 

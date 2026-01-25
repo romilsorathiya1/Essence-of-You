@@ -1,0 +1,914 @@
+/* src/styles/Shop.module.css - Premium Shop Page */
+
+/* ============================================
+   SHOP HERO SECTION
+   ============================================ */
+.shopHero {
+  margin-top: 100px;
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #112F2B;
+  overflow: hidden;
+}
+
+
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 60px 40px;
+  animation: heroReveal 1.2s ease-out;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.08));
+  padding: 14px 32px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.heroContent h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.2rem;
+  margin-bottom: 25px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroContent p {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroDivider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-rose), transparent);
+  margin: 0 auto;
+}
+
+/* ============================================
+   SECTION COMMON STYLES
+   ============================================ */
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+  padding: 12px 28px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  font-weight: 600;
+}
+
+.sectionHeader h2,
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+  color: var(--bg-dark-brown);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.sectionHeader p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.divider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-rose), transparent);
+  margin: 25px auto 30px;
+  position: relative;
+}
+
+.divider::before {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-cream);
+  padding: 0 15px;
+  color: var(--accent-gold);
+  font-size: 0.8rem;
+}
+
+/* ============================================
+   PRODUCTS SECTION
+   ============================================ */
+.productsSection {
+  padding: 100px var(--container-padding);
+  background: linear-gradient(180deg, var(--bg-cream) 0%, #faf9f7 50%, var(--bg-cream) 100%);
+  position: relative;
+}
+
+.productsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.productCard {
+  background: #1B3B36;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 20px 60px rgba(27, 59, 54, 0.25);
+}
+
+.productCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(27, 59, 54, 0.4);
+}
+
+.productCard:hover::before {
+  opacity: 1;
+}
+
+.productImg {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #243c38 0%, #1B3B36 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImg img {
+  height: 90%;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.productCard:hover .productImg img {
+  transform: scale(1.08) translateY(-5px);
+}
+
+.tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--bg-dark-brown);
+  padding: 10px 20px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.95);
+  color: var(--bg-dark-brown);
+  padding: 8px 18px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.productDetails {
+  padding: 35px;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, #1B3B36 0%, #152e2a 100%);
+}
+
+.productDetails h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: white;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.productDetails p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.price {
+  font-size: 1.7rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: var(--accent-gold);
+}
+
+.addBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 14px 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+
+.addBtn:hover {
+  background: var(--accent-gold);
+  color: var(--bg-dark-brown);
+  border-color: var(--accent-gold);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   TRUST SECTION - Why Shop With Us
+   ============================================ */
+.trustSection {
+  padding: 100px var(--container-padding);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  position: relative;
+}
+
+.trustSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(166, 117, 108, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.trustSection .sectionHeader h2 {
+  color: white;
+  background: linear-gradient(135deg, #ffffff 20%, var(--accent-gold) 50%, #ffffff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trustSection .sectionHeader p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.trustCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 45px 35px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.trustCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  border-radius: 20px 20px 0 0;
+}
+
+.trustCard:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.trustCard:hover::before {
+  transform: scaleX(1);
+}
+
+.trustIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(166, 117, 108, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.4s ease;
+}
+
+.trustIcon i {
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+  transition: all 0.4s ease;
+}
+
+.trustCard:hover .trustIcon {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+  border-color: transparent;
+  transform: scale(1.1);
+}
+
+.trustCard:hover .trustIcon i {
+  color: white;
+  transform: rotate(10deg);
+}
+
+.trustCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.trustCard p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+/* ============================================
+   FRAGRANCE GUIDE SECTION
+   ============================================ */
+.guideSection {
+  padding: 100px var(--container-padding);
+  background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.guideSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.guideContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.guideText {
+  padding-right: 40px;
+}
+
+.guideText h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--bg-dark-brown);
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.guideDivider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose));
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.guideDivider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+}
+
+.guideText p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.guideHighlight {
+  color: #777 !important;
+  font-style: italic;
+  padding-left: 25px;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.scentFamilies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 35px 0;
+}
+
+.scentTag {
+  background: rgba(27, 59, 54, 0.08);
+  border: 1px solid rgba(27, 59, 54, 0.2);
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: var(--card-green);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.scentTag:hover {
+  background: var(--card-green);
+  color: white;
+  border-color: var(--card-green);
+  transform: scale(1.05);
+}
+
+.guideImage {
+  position: relative;
+}
+
+.guideImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.imageFrame {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: 20px;
+  left: 20px;
+  border: 2px solid var(--accent-gold);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq {
+  padding: 100px var(--container-padding);
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-cream);
+}
+
+.faq h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: var(--bg-dark-brown);
+  font-weight: 500;
+}
+
+.faqDetails {
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faqDetails[open] {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.faqSummary {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 28px 35px;
+  transition: all 0.3s ease;
+}
+
+.faqSummary:hover {
+  color: var(--bg-dark-brown);
+}
+
+.faqSummary::after {
+  content: '+';
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+  color: var(--accent-gold);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+}
+
+.faqDetails[open] .faqSummary::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faqDetails p {
+  padding: 0 35px 30px 35px;
+  color: #666;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.ctaSection {
+  padding: 120px var(--container-padding);
+  background: linear-gradient(135deg, #5a0a00 0%, #3D0C02 50%, #5a0a00 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(166, 117, 108, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaLabel {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.08));
+  padding: 12px 28px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+}
+
+.ctaContent h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #fff 20%, var(--accent-gold) 50%, #fff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ctaContent p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+.scrollTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: #5a0a00;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 999;
+}
+
+.scrollTop:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-rose));
+}
+
+.scrollTop.show {
+  display: flex;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 1200px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trustGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1050px) {
+
+  .heroContent h1,
+  .sectionHeader h2,
+  .sectionTitle,
+  .guideText h2,
+  .ctaContent h2 {
+    font-size: 2.5rem;
+  }
+
+  .guideContent {
+    gap: 50px;
+  }
+
+  .guideText {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .guideContent {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .guideText {
+    order: 2;
+    text-align: center;
+  }
+
+  .guideText .sectionLabel {
+    margin-bottom: 20px;
+  }
+
+  .guideDivider {
+    margin: 0 auto 30px;
+  }
+
+  .guideHighlight {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .scentFamilies {
+    justify-content: center;
+  }
+
+  .guideImage {
+    order: 1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .imageFrame {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopHero {
+    height: 50vh;
+    min-height: 400px;
+    margin-top: 60px;
+  }
+
+  .heroContent {
+    padding: 40px 25px;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    line-height: 1.25;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .heroLabel {
+    font-size: 0.65rem;
+    padding: 10px 22px;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .productImg {
+    height: 280px;
+  }
+
+  .trustGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .trustCard {
+    padding: 35px 30px;
+  }
+
+  .productsSection,
+  .trustSection,
+  .guideSection,
+  .faq,
+  .ctaSection {
+    padding: 70px var(--container-padding);
+  }
+
+  .faqSummary {
+    font-size: 1.15rem;
+    padding: 22px 25px;
+  }
+
+  .faqDetails p {
+    padding: 0 25px 25px;
+  }
+
+  .divider::before {
+    background: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.7rem;
+  }
+
+  .sectionHeader h2,
+  .sectionTitle,
+  .guideText h2,
+  .ctaContent h2,
+  .faq h2 {
+    font-size: 1.9rem;
+  }
+
+  .priceRow {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .price {
+    text-align: center;
+  }
+
+  .addBtn {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .scrollTop {
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .scentTag {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+}

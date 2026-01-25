@@ -2,11 +2,17 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
+import AuthModal from './AuthModal';
+import { useCart } from '../context/CartContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
   const [currentOffer, setCurrentOffer] = useState(0);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
+  const { getCartCount, openCart } = useCart();
+  const cartCount = getCartCount();
 
   const offers = [
     { text: "Free shipping over $50", highlight: "Free" },
@@ -37,6 +43,13 @@ export default function Header() {
     }, 4000);
     return () => clearInterval(interval);
   }, [offers.length]);
+
+  // Listen for openAuthModal event
+  useEffect(() => {
+    const handleOpenAuth = () => setShowAuthModal(true);
+    window.addEventListener('openAuthModal', handleOpenAuth);
+    return () => window.removeEventListener('openAuthModal', handleOpenAuth);
+  }, []);
 
   const nextOffer = () => {
     setCurrentOffer((prev) => (prev + 1) % offers.length);
@@ -91,16 +104,27 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul>
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/shop">Shop</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/customize-perfume">Customize Perfume</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </nav>
         <div className={styles.icons}>
-          <i className="fas fa-user"></i>
-          <i className="fas fa-shopping-bag"></i>
+          <button onClick={() => setShowAuthModal(true)} className={styles.iconLink}>
+            <i className="fas fa-user"></i>
+          </button>
+          <button onClick={openCart} className={styles.iconLink}>
+            <i className="fas fa-shopping-bag"></i>
+            {cartCount > 0 && (
+              <span className={styles.cartBadge}>{cartCount}</span>
+            )}
+          </button>
         </div>
       </header>
+
+      {/* Auth Modal */}
+      <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
     </>
   );
 }

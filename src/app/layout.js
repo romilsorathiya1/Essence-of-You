@@ -2,6 +2,8 @@
 import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { CartProvider } from '../context/CartContext';
+import CartModal from '../components/CartModal';
 
 export const metadata = {
   title: 'Essence of You | Luxury Fragrances',
@@ -25,9 +27,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CartModal />
+        </CartProvider>
       </body>
     </html>
   );

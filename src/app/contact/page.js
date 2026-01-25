@@ -24,18 +24,34 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setIsSubmitted(true);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
-        }, 1500);
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                const data = await response.json();
+                alert(data.error || 'Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Failed to send message. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // Reveal animation

@@ -342,8 +342,8 @@ export default function Home() {
 
 
         <details className={`${styles.faqDetails} reveal`}>
-          <summary className={styles.faqSummary}>Do you offer refills or sustainable packaging?</summary>
-          <p>We're committed to sustainability! All our bottles are made from 100% recycled materials and are fully recyclable. We also offer a refill program where you can return empty containers for a discount on your next purchase.</p>
+          <summary className={styles.faqSummary}>Is your packaging eco-friendly?</summary>
+          <p>Absolutely! We're committed to sustainability. All our bottles are made from 100% recycled glass and are fully recyclable. Our packaging uses FSC-certified paper and biodegradable materials, making it as beautiful for the planet as it is for you.</p>
         </details>
 
         <details className={`${styles.faqDetails} reveal`}>
