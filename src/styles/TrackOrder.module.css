@@ -1,0 +1,484 @@
+/* src/styles/TrackOrder.module.css */
+
+.trackOrderPage {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 180px var(--container-padding) 60px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #112F2B;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Search Form */
+.searchCard {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.formGroup {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.inputWrapper {
+    flex: 1;
+}
+
+.inputWrapper label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.inputWrapper input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.inputWrapper input:focus {
+    outline: none;
+    border-color: #112F2B;
+    box-shadow: 0 0 0 3px rgba(17, 47, 43, 0.1);
+}
+
+.trackBtn {
+    background: #112F2B;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 50px;
+    /* Match input height roughly */
+}
+
+.trackBtn:hover {
+    background: #0d2421;
+    transform: translateY(-2px);
+}
+
+.trackBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Order Details */
+.orderDetails {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.orderHeader {
+    background: #112F2B;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderHeader h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.orderStatus {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.orderBody {
+    padding: 30px;
+}
+
+.progressContainer {
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.progressBar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.progressLine {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    right: 40px;
+    height: 3px;
+    background: #eee;
+    z-index: 0;
+}
+
+.progressFill {
+    height: 100%;
+    background: #48bb78;
+    transition: width 0.5s ease;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80px;
+}
+
+.stepIcon {
+    width: 32px;
+    height: 32px;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .stepIcon {
+    background: #48bb78;
+    color: white;
+    box-shadow: 0 0 0 4px #e6fffa;
+}
+
+.stepText {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    font-weight: 500;
+}
+
+.step.active .stepText {
+    color: #112F2B;
+    font-weight: 600;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.infoGroup h3 {
+    font-size: 1rem;
+    color: #112F2B;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.infoGroup p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.itemsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.itemsTable th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+    color: #999;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.itemsTable td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.itemImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.totalSection {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.finalTotal {
+    font-weight: 700;
+    color: #112F2B;
+    font-size: 1.2rem;
+}
+
+.errorMsg {
+    background: #fff5f5;
+    color: #c53030;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #feb2b2;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .trackOrderPage {
+        padding: 170px var(--container-padding) 50px;
+    }
+
+    .pageTitle {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .trackOrderPage {
+        padding: 160px 20px 40px;
+    }
+
+    .formGroup {
+        flex-direction: column;
+    }
+
+    .trackBtn {
+        width: 100%;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stepText {
+        font-size: 0.7rem;
+    }
+
+    .pageTitle {
+        font-size: 2rem;
+    }
+
+    .searchCard {
+        padding: 30px 25px;
+    }
+
+    .orderHeader {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .trackOrderPage {
+        padding: 140px 15px 30px;
+    }
+
+    .pageTitle {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+
+    .searchCard {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+
+    .inputWrapper label {
+        font-size: 0.85rem;
+    }
+
+    .inputWrapper input {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .trackBtn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    .orderBody {
+        padding: 20px;
+    }
+
+    .progressContainer {
+        padding: 0 10px;
+    }
+
+    .progressLine {
+        left: 20px;
+        right: 20px;
+    }
+
+    .step {
+        width: 60px;
+    }
+
+    .stepIcon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .stepText {
+        font-size: 0.65rem;
+    }
+
+    .infoGroup h3 {
+        font-size: 0.95rem;
+    }
+
+    .infoGroup p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trackOrderPage {
+        padding: 130px 12px 25px;
+    }
+
+    .pageTitle {
+        font-size: 1.6rem;
+    }
+
+    .searchCard {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .orderDetails {
+        border-radius: 12px;
+    }
+
+    .orderHeader {
+        padding: 15px 20px;
+    }
+
+    .orderHeader h2 {
+        font-size: 1rem;
+    }
+
+    .orderStatus {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .progressBar {
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .step {
+        width: auto;
+        flex: 1;
+    }
+
+    .stepIcon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+
+    .stepText {
+        font-size: 0.6rem;
+    }
+
+    .itemsTable {
+        font-size: 0.85rem;
+    }
+
+    .itemsTable th,
+    .itemsTable td {
+        padding: 10px 5px;
+    }
+
+    .itemImage {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .totalRow {
+        font-size: 0.9rem;
+        gap: 20px;
+    }
+
+    .finalTotal {
+        font-size: 1.1rem;
+    }
+}

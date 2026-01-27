@@ -1,12 +1,16 @@
 "use client";
 import { useState, useEffect } from 'react';
 import styles from '../../styles/CustomizePerfume.module.css';
+import { useAuth } from '../../context/AuthContext';
+import AuthModal from '../../components/AuthModal';
 
 export default function CustomizePerfume() {
+    const { isLoggedIn, user } = useAuth();
     const [currentStep, setCurrentStep] = useState(0);
     const [answers, setAnswers] = useState({});
     const [isComplete, setIsComplete] = useState(false);
     const [showProcess, setShowProcess] = useState(true);
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
     const questions = [
         {
@@ -155,9 +159,15 @@ export default function CustomizePerfume() {
     };
 
     const handleStartQuiz = () => {
+        // Check if user is logged in
+        if (!isLoggedIn()) {
+            setShowAuthModal(true);
+            return;
+        }
         setShowProcess(false);
         window.scrollTo(0, 0);
     };
+
 
     const handleRestart = () => {
         setCurrentStep(0);
@@ -531,6 +541,7 @@ export default function CustomizePerfume() {
                     </div>
                 </section>
             )}
+            <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
         </>
     );
 }

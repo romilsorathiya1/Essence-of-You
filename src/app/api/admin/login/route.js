@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Admin from '@/models/Admin';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 // POST - Admin login
 export async function POST(request) {
     try {
@@ -56,8 +59,9 @@ export async function POST(request) {
             admin: adminData
         });
     } catch (error) {
+        console.error('Admin Login Error:', error);
         return NextResponse.json(
-            { error: 'Login failed' },
+            { error: 'Login failed', details: error.message },
             { status: 500 }
         );
     }

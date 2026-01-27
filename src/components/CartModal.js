@@ -1,9 +1,11 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useCart } from '../context/CartContext';
 import styles from '../styles/CartModal.module.css';
 
 export default function CartModal() {
+    const router = useRouter();
     const {
         cartItems,
         removeFromCart,
@@ -18,14 +20,18 @@ export default function CartModal() {
         // Check if user is logged in
         const user = localStorage.getItem('user');
 
+        // Close cart first
+        closeCart();
+
+        // Scroll to top to prevent jumping
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
         if (user) {
             // User is logged in, redirect to checkout page
-            closeCart();
-            window.location.href = '/checkout';
+            router.push('/checkout');
         } else {
             // User not logged in, show auth modal
             // Dispatch custom event for Header to listen to
-            closeCart();
             window.dispatchEvent(new Event('openAuthModal'));
         }
     };

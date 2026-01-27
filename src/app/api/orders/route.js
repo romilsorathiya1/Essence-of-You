@@ -24,15 +24,28 @@ export async function GET(request) {
     }
 }
 
+// Helper function to generate order number
+function generateOrderNumber() {
+    const date = new Date();
+    const year = date.getFullYear().toString().slice(-2);
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+    return `EOY${year}${month}${random}`;
+}
+
 // POST - Create a new order
 export async function POST(request) {
     try {
         await connectDB();
         const body = await request.json();
 
+        // Generate order number
+        body.orderNumber = generateOrderNumber();
+
         const order = await Order.create(body);
         return NextResponse.json(order, { status: 201 });
     } catch (error) {
+        console.error('Order creation error:', error);
         return NextResponse.json(
             { error: error.message || 'Failed to create order' },
             { status: 400 }

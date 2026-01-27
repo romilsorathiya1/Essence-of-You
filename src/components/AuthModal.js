@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from 'react';
 import styles from '../styles/AuthModal.module.css';
+import { useAuth } from '../context/AuthContext';
 
 export default function AuthModal({ isOpen, onClose }) {
+    const { login } = useAuth();
     const [mode, setMode] = useState('login'); // 'login' or 'register'
     const [formData, setFormData] = useState({
         name: '',
@@ -71,11 +73,10 @@ export default function AuthModal({ isOpen, onClose }) {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('user', JSON.stringify(data.user));
+                login(data.user);
                 setSuccess('Login successful!');
                 setTimeout(() => {
                     onClose();
-                    window.location.reload();
                 }, 1000);
             } else {
                 setError(data.error || 'Login failed. Please try again.');
@@ -119,12 +120,12 @@ export default function AuthModal({ isOpen, onClose }) {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('user', JSON.stringify(data.user));
+                login(data.user);
                 setSuccess('Account created successfully!');
                 setTimeout(() => {
                     onClose();
-                    window.location.reload();
                 }, 1000);
+
             } else {
                 setError(data.error || 'Registration failed. Please try again.');
             }

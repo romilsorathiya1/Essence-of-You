@@ -1,19 +1,22 @@
 // src/app/layout.js
+'use client';
 import './globals.css';
+import { usePathname } from 'next/navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { CartProvider } from '../context/CartContext';
+import { AuthProvider } from '../context/AuthContext';
 import CartModal from '../components/CartModal';
 
-export const metadata = {
-  title: 'Essence of You | Luxury Fragrances',
-  description: 'Essence of You - Premium luxury fragrances and custom perfumes crafted to define your unique essence.',
-};
-
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname?.startsWith('/admin');
+
   return (
     <html lang="en">
       <head>
+        <title>Essence of You | Luxury Fragrances</title>
+        <meta name="description" content="Essence of You - Premium luxury fragrances and custom perfumes crafted to define your unique essence." />
         {/* Fonts and Icon Links */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -27,12 +30,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <CartProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <CartModal />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            {!isAdminRoute && <Header />}
+            <main>{children}</main>
+            {!isAdminRoute && <Footer />}
+            {!isAdminRoute && <CartModal />}
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

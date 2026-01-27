@@ -111,20 +111,87 @@ a {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
 }
 
 /* --- RESPONSIVE UTILITIES --- */
 @media (max-width: 1050px) {
-  .container { max-width: 95%; }
+  .container {
+    max-width: 95%;
+  }
 }
 
 @media (max-width: 768px) {
-  :root { --container-padding: 6%; }
-  .btn { padding: 14px 30px; font-size: 0.8rem; }
+  :root {
+    --container-padding: 6%;
+  }
+
+  .btn {
+    padding: 14px 30px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-padding: 5%;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 4%;
+  }
+
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.7rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1600px) {
+  :root {
+    --container-padding: 8%;
+  }
+
+  .container {
+    max-width: 1500px;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --container-padding: 10%;
+  }
+
+  .container {
+    max-width: 1700px;
+  }
 }

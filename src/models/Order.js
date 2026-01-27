@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 const OrderSchema = new mongoose.Schema({
     orderNumber: {
         type: String,
-        required: true,
         unique: true
     },
     customer: {
@@ -57,16 +56,10 @@ const OrderSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// Generate unique order number before saving
-OrderSchema.pre('save', async function (next) {
-    if (!this.orderNumber) {
-        const date = new Date();
-        const year = date.getFullYear().toString().slice(-2);
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-        this.orderNumber = `EOY${year}${month}${random}`;
-    }
-    next();
-});
+// Force model recompilation for dev environment
+if (mongoose.models.Order) {
+    delete mongoose.models.Order;
+}
 
-export default mongoose.models.Order || mongoose.model('Order', OrderSchema);
+const Order = mongoose.model('Order', OrderSchema);
+export default Order;

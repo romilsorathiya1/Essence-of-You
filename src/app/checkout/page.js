@@ -1,15 +1,18 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import AuthModal from '../../components/AuthModal';
 import styles from '../../styles/Checkout.module.css';
 
 export default function Checkout() {
     const router = useRouter();
     const { cartItems, getCartTotal, clearCart } = useCart();
-    const [user, setUser] = useState(null);
+    const { user, isLoggedIn, isLoading: authLoading } = useAuth();
     const [isLoading, setIsLoading] = useState(true);
     const [orderPlaced, setOrderPlaced] = useState(false);
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
     // Form State
     const [formData, setFormData] = useState({
@@ -41,22 +44,18 @@ export default function Checkout() {
 
     // Check auth and load user data
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        if (!storedUser) {
-            router.push('/');
-            return;
-        }
+        if (authLoading) return;
 
-        const userData = JSON.parse(storedUser);
-        setUser(userData);
-        setFormData(prev => ({
-            ...prev,
-            name: userData.name || '',
-            email: userData.email || '',
-            phone: userData.phone || ''
-        }));
+        if (isLoggedIn() && user) {
+            setFormData(prev => ({
+                ...prev,
+                name: user.name || '',
+                email: user.email || '',
+                phone: user.phone || ''
+            }));
+        }
         setIsLoading(false);
-    }, [router]);
+    }, [authLoading, user, isLoggedIn]);
 
     // Redirect if cart empty
     useEffect(() => {
@@ -64,6 +63,14 @@ export default function Checkout() {
             router.push('/shop');
         }
     }, [cartItems, isLoading, router, orderPlaced]);
+
+    // Scroll to top when order is placed
+    useLayoutEffect(() => {
+        if (orderPlaced) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+    }, [orderPlaced]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -127,8 +134,16 @@ export default function Checkout() {
         try {
             const orderData = {
                 customer: {
-                    ...formData,
-                    userId: user.id
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    address: {
+                        street: formData.address,
+                        city: formData.city,
+                        state: formData.state,
+                        zipCode: formData.zipCode,
+                        country: 'India'
+                    }
                 },
                 items: cartItems.map(item => ({
                     name: item.name,
@@ -138,7 +153,8 @@ export default function Checkout() {
                 })),
                 totalAmount: getCartTotal(),
                 paymentMethod: 'cod',
-                status: 'pending'
+                status: 'pending',
+                notes: formData.notes || ''
             };
 
             const response = await fetch('/api/orders', {
@@ -147,34 +163,89 @@ export default function Checkout() {
                 body: JSON.stringify(orderData)
             });
 
+            const result = await response.json();
+
             if (response.ok) {
                 setOrderPlaced(true);
                 clearCart();
-                // We show success message here instead of redirecting immediately
+                // Store order number for display
+                sessionStorage.setItem('lastOrderNumber', result.orderNumber);
+            } else {
+                throw new Error(result.error || 'Failed to place order');
             }
         } catch (error) {
             console.error('Order error:', error);
-            alert('Failed to place order. Please try again.');
+            alert('Failed to place order: ' + error.message);
         }
     };
 
-    if (isLoading) return null;
+    if (isLoading || authLoading) return null;
 
     if (orderPlaced) {
+        const orderNumber = typeof window !== 'undefined' ? sessionStorage.getItem('lastOrderNumber') : '';
         return (
             <div className={styles.successContainer}>
                 <div className={styles.successCard}>
                     <div className={styles.successIcon}>
-                        <i className="fas fa-check-circle"></i>
+                        <i className="fas fa-check"></i>
                     </div>
                     <h1>Order Placed Successfully!</h1>
-                    <p>Thank you for shopping with Essence of You.</p>
-                    <p>A confirmation email has been sent to {formData.email}</p>
-                    <button onClick={() => router.push('/shop')} className={styles.continueBtn}>
+                    {orderNumber && (
+                        <p className={styles.orderNumber}>Your order number is: <strong>{orderNumber}</strong></p>
+                    )}
+                    <p className={styles.successMessage}>
+                        Thank you for your order! We've sent a confirmation email to {formData.email}.
+                        Our team will process your order and you'll receive shipping updates soon.
+                    </p>
+
+                    <div className={styles.actionButtons}>
+                        <button onClick={() => router.push(`/track-order?orderNumber=${orderNumber}&email=${formData.email}`)} className={styles.outlineBtnGold}>
+                            Track Your Order
+                        </button>
+                        <button onClick={() => window.print()} className={styles.outlineBtnGreen}>
+                            Download Invoice
+                        </button>
+                    </div>
+
+                    <button onClick={() => router.push('/shop')} className={styles.primaryBtn}>
                         Continue Shopping
                     </button>
                 </div>
             </div>
+        );
+    }
+
+    // Show login required message if not logged in
+    if (!isLoggedIn()) {
+        return (
+            <>
+                <div className={styles.checkoutPage}>
+                    <div className={styles.container}>
+                        <div className={styles.loginRequired}>
+                            <div className={styles.loginCard}>
+                                <div className={styles.loginIcon}>
+                                    <i className="fas fa-lock"></i>
+                                </div>
+                                <h2>Login Required</h2>
+                                <p>Please login or create an account to proceed with checkout</p>
+                                <button
+                                    className={styles.loginBtn}
+                                    onClick={() => setShowAuthModal(true)}
+                                >
+                                    <i className="fas fa-user"></i> Login / Register
+                                </button>
+                                <button
+                                    onClick={() => router.push('/shop')}
+                                    className={styles.backToShopBtn}
+                                >
+                                    <i className="fas fa-arrow-left"></i> Back to Shop
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
+            </>
         );
     }
 
@@ -186,6 +257,7 @@ export default function Checkout() {
                 </button>
 
                 <h1 className={styles.pageTitle}>Checkout</h1>
+
 
                 <div className={styles.grid}>
                     {/* Left Column - Forms */}
