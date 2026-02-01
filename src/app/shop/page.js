@@ -250,7 +250,7 @@ export default function Shop() {
 
                 <details className={`${styles.faqDetails} reveal`}>
                     <summary className={styles.faqSummary}>What is your return policy?</summary>
-                    <p>We offer a 30-day satisfaction guarantee. If you're not completely happy with your purchase, you can return any unopened product for a full refund. Opened products can be exchanged for store credit.</p>
+                    <p>We offer a 30-day satisfaction guarantee. If you&apos;re not completely happy with your purchase, you can return any unopened product for a full refund. Opened products can be exchanged for store credit.</p>
                 </details>
 
                 <details className={`${styles.faqDetails} reveal`}>
@@ -269,7 +269,7 @@ export default function Shop() {
                 <div className={`${styles.ctaContent} reveal`}>
                     <span className={styles.ctaLabel}>Create Something Unique</span>
                     <h2>Design Your Custom Fragrance</h2>
-                    <p>Can't find your perfect match? Create a bespoke perfume that's uniquely yours with our custom fragrance service.</p>
+                    <p>Can&apos;t find your perfect match? Create a bespoke perfume that&apos;s uniquely yours with our custom fragrance service.</p>
                     <a href="/customize-perfume" className="btn">Start Creating</a>
                 </div>
             </section>

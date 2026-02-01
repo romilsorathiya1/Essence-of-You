@@ -322,6 +322,17 @@
     box-shadow: 0 10px 25px rgba(17, 47, 43, 0.2);
 }
 
+.placeOrderBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.placeOrderBtn i {
+    margin-right: 8px;
+}
+
 /* Success State */
 .successContainer {
     min-height: 100vh;

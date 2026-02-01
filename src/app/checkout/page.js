@@ -11,6 +11,7 @@ export default function Checkout() {
     const { cartItems, getCartTotal, clearCart } = useCart();
     const { user, isLoggedIn, isLoading: authLoading } = useAuth();
     const [isLoading, setIsLoading] = useState(true);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [orderPlaced, setOrderPlaced] = useState(false);
     const [showAuthModal, setShowAuthModal] = useState(false);
 
@@ -131,6 +132,8 @@ export default function Checkout() {
             return;
         }
 
+        setIsSubmitting(true);
+
         try {
             const orderData = {
                 customer: {
@@ -176,6 +179,8 @@ export default function Checkout() {
         } catch (error) {
             console.error('Order error:', error);
             alert('Failed to place order: ' + error.message);
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -194,8 +199,8 @@ export default function Checkout() {
                         <p className={styles.orderNumber}>Your order number is: <strong>{orderNumber}</strong></p>
                     )}
                     <p className={styles.successMessage}>
-                        Thank you for your order! We've sent a confirmation email to {formData.email}.
-                        Our team will process your order and you'll receive shipping updates soon.
+                        Thank you for your order! We&apos;ve sent a confirmation email to {formData.email}.
+                        Our team will process your order and you&apos;ll receive shipping updates soon.
                     </p>
 
                     <div className={styles.actionButtons}>
@@ -392,8 +397,18 @@ export default function Checkout() {
                                 </div>
                             </div>
 
-                            <button type="submit" className={styles.placeOrderBtn}>
-                                Place Order • ${getCartTotal().toFixed(2)}
+                            <button
+                                type="submit"
+                                className={`${styles.placeOrderBtn} ${isSubmitting ? styles.submitting : ''}`}
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <i className="fas fa-spinner fa-spin"></i> Processing...
+                                    </>
+                                ) : (
+                                    `Place Order • $${getCartTotal().toFixed(2)}`
+                                )}
                             </button>
                         </form>
                     </div>

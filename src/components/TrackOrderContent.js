@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import styles from '../../styles/TrackOrder.module.css';
+import styles from '../styles/TrackOrder.module.css';
 
-function TrackOrderContent() {
+export default function TrackOrderContent() {
     const searchParams = useSearchParams();
 
     // Initial state from URL params if available

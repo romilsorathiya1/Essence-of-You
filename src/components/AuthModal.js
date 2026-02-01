@@ -182,7 +182,7 @@ export default function AuthModal({ isOpen, onClose }) {
                         </div>
 
                         <div className={styles.testimonial}>
-                            <p>"The most luxurious perfumes I've ever experienced. Truly exceptional quality."</p>
+                            <p>&quot;The most luxurious perfumes I&apos;ve ever experienced. Truly exceptional quality.&quot;</p>
                             <span>— Sarah M., Premium Member</span>
                         </div>
                     </div>
@@ -370,7 +370,7 @@ export default function AuthModal({ isOpen, onClose }) {
                     {/* Footer */}
                     <div className={styles.formFooter}>
                         <p>
-                            {mode === 'login' ? "Don't have an account?" : "Already have an account?"}
+                            {mode === 'login' ? "Don&apos;t have an account?" : "Already have an account?"}
                             <button onClick={switchMode} className={styles.switchBtn}>
                                 {mode === 'login' ? 'Create one' : 'Sign in'}
                             </button>

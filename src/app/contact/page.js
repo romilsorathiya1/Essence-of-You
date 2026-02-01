@@ -82,8 +82,8 @@ export default function Contact() {
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
                     <span className={styles.heroLabel}>Get In Touch</span>
-                    <h1>We'd Love to Hear From You</h1>
-                    <p>Have questions about our products? We're here to help</p>
+                    <h1>We&apos;d Love to Hear From You</h1>
+                    <p>Have questions about our products? We&apos;re here to help</p>
                 </div>
             </section>
 
@@ -92,7 +92,7 @@ export default function Contact() {
                 {/* Full Width Header */}
                 <div className={`${styles.contactHeader} reveal`}>
                     <span className={styles.sectionLabel}>Contact Info</span>
-                    <h2>Let's Start a Conversation</h2>
+                    <h2>Let&apos;s Start a Conversation</h2>
                     <div className={styles.divider}></div>
                     <p>Whether you have a question about our perfumes, custom orders, or anything else, our team is ready to answer all your questions.</p>
                 </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                                     <i className="fas fa-check-circle"></i>
                                 </div>
                                 <h2>Thank You!</h2>
-                                <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                                <p>Your message has been sent successfully. We&apos;ll get back to you within 24 hours.</p>
                                 <button
                                     className={styles.resetBtn}
                                     onClick={() => setIsSubmitted(false)}

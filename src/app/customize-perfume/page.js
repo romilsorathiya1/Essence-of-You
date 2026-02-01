@@ -96,7 +96,7 @@ export default function CustomizePerfume() {
             question: 'Is this a gift for someone special?',
             options: [
                 { value: 'no', label: 'For Myself', icon: 'fas fa-user', desc: 'Personal indulgence' },
-                { value: 'yes', label: 'Yes, It\'s a Gift', icon: 'fas fa-gift', desc: 'For someone special' }
+                { value: 'yes', label: 'Yes, It&apos;s a Gift', icon: 'fas fa-gift', desc: 'For someone special' }
             ]
         },
         {
@@ -372,7 +372,7 @@ export default function CustomizePerfume() {
                     <section className={styles.ctaSection}>
                         <div className={`${styles.ctaContent} reveal`}>
                             <h2>Ready to Create Your Signature Scent?</h2>
-                            <p>Answer a few questions and we'll craft three unique samples just for you</p>
+                            <p>Answer a few questions and we&apos;ll craft three unique samples just for you</p>
                             <button className="btn" onClick={handleStartQuiz}>
                                 Start Customizing <i className="fas fa-arrow-right"></i>
                             </button>

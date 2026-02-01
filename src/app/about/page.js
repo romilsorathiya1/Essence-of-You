@@ -43,7 +43,7 @@ export default function About() {
                         <span className={styles.sectionLabel}>Our Philosophy</span>
                         <h2>Born from Passion, Crafted with Purpose</h2>
                         <div className={styles.divider}></div>
-                        <p>Every fragrance we create tells a story. Essence of You was founded on the belief that beautiful scents shouldn't be limited to perfume bottles—they should infuse every aspect of your life, from your skin to your living spaces.</p>
+                        <p>Every fragrance we create tells a story. Essence of You was founded on the belief that beautiful scents shouldn&apos;t be limited to perfume bottles—they should infuse every aspect of your life, from your skin to your living spaces.</p>
                         <p>We source the finest ingredients from around the world, working directly with sustainable farms and artisan distillers to bring you products that are as kind to the earth as they are luxurious to experience.</p>
                     </div>
                     <div className={`${styles.storyImage} reveal`}>

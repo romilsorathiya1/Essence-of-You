@@ -353,6 +353,46 @@
     color: #888;
 }
 
+.filterGroup {
+    display: flex;
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.filterBtn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.filterBtn.active {
+    background: white;
+    color: var(--accent-gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filterBtn i {
+    font-size: 0.9rem;
+}
+
 .dataTable {
     width: 100%;
     border-collapse: collapse;

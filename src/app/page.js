@@ -81,7 +81,7 @@ export default function Home() {
           <span className={styles.whyUseLabel}>Why Essence of You?</span>
           <h2 className={styles.whyUseTitle}>Because You Deserve to Be <span className={styles.highlight}>Remembered</span></h2>
           <div className={styles.showcaseDivider}></div>
-          <p className={styles.whyUseIntro}>A fragrance isn't just a scent—it's your invisible signature. It's the memory you leave behind, the confidence you carry, and the story only you can tell.</p>
+          <p className={styles.whyUseIntro}>A fragrance isn&apos;t just a scent—it&apos;s your invisible signature. It&apos;s the memory you leave behind, the confidence you carry, and the story only you can tell.</p>
         </div>
 
         <div className={styles.emotionalGrid}>
@@ -92,9 +92,9 @@ export default function Home() {
             </div>
             <div className={styles.emotionalCardContent}>
               <h3>Create Lasting Memories</h3>
-              <p>Scent is the strongest sense tied to memory. When someone catches your fragrance, they don't just smell perfume—they remember <em>you</em>. Your laugh. Your warmth. Your presence.</p>
+              <p>Scent is the strongest sense tied to memory. When someone catches your fragrance, they don&apos;t just smell perfume—they remember <em>you</em>. Your laugh. Your warmth. Your presence.</p>
               <div className={styles.emotionalQuote}>
-                <span>"They forgot what you said, but never how you made them feel."</span>
+                <span>&quot;They forgot what you said, but never how you made them feel.&quot;</span>
               </div>
             </div>
           </div>
@@ -106,9 +106,9 @@ export default function Home() {
             </div>
             <div className={styles.emotionalCardContent}>
               <h3>Wear Your Confidence</h3>
-              <p>The right fragrance transforms how you carry yourself. It's that extra layer of self-assurance before a big meeting, a first date, or simply walking into a room knowing you're unforgettable.</p>
+              <p>The right fragrance transforms how you carry yourself. It&apos;s that extra layer of self-assurance before a big meeting, a first date, or simply walking into a room knowing you&apos;re unforgettable.</p>
               <div className={styles.emotionalQuote}>
-                <span>"Your scent arrives before you do—and lingers after you leave."</span>
+                <span>&quot;Your scent arrives before you do—and lingers after you leave.&quot;</span>
               </div>
             </div>
           </div>
@@ -120,9 +120,9 @@ export default function Home() {
             </div>
             <div className={styles.emotionalCardContent}>
               <h3>Define Your Identity</h3>
-              <p>You're not like everyone else—why should your fragrance be? Our customizable perfumes let you craft a scent as unique as your fingerprint. This is your essence, your story, <em>your signature</em>.</p>
+              <p>You&apos;re not like everyone else—why should your fragrance be? Our customizable perfumes let you craft a scent as unique as your fingerprint. This is your essence, your story, <em>your signature</em>.</p>
               <div className={styles.emotionalQuote}>
-                <span>"Be yourself; everyone else is already taken."</span>
+                <span>&quot;Be yourself; everyone else is already taken.&quot;</span>
               </div>
             </div>
           </div>
@@ -134,9 +134,9 @@ export default function Home() {
             </div>
             <div className={styles.emotionalCardContent}>
               <h3>A Daily Act of Self-Love</h3>
-              <p>Applying perfume isn't just routine—it's a ritual. A moment where you pause, breathe, and remind yourself that you're worth every beautiful thing. Because self-care isn't selfish; it's essential.</p>
+              <p>Applying perfume isn&apos;t just routine—it&apos;s a ritual. A moment where you pause, breathe, and remind yourself that you&apos;re worth every beautiful thing. Because self-care isn&apos;t selfish; it&apos;s essential.</p>
               <div className={styles.emotionalQuote}>
-                <span>"Start each day with intention, end it with gratitude."</span>
+                <span>&quot;Start each day with intention, end it with gratitude.&quot;</span>
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function Home() {
           </div>
           <div className={`${styles.featureItem} reveal`}>
             <img src="/assets/perfume-use-3.jpg" alt="Spray on Wrists" />
-            <h3>Step 3: Don't Forget Wrists</h3>
+            <h3>Step 3: Don&apos;t Forget Wrists</h3>
             <p>Apply to wrists and avoid rubbing together. Let the scent settle naturally to preserve the fragrance notes.</p>
           </div>
         </div>
@@ -314,7 +314,7 @@ export default function Home() {
             <span className={styles.showcaseLabel}>Our Story</span>
             <h2 className={styles.eleganceTitle}>Where Elegance Meets Individuality</h2>
             <div className={styles.showcaseDivider}></div>
-            <p>We believe your personal fragrance should be as unique as you are. That's why we've created a revolutionary line of haute parfumerie that allows you to express your individual essence.</p>
+            <p>We believe your personal fragrance should be as unique as you are. That&apos;s why we&apos;ve created a revolutionary line of haute parfumerie that allows you to express your individual essence.</p>
             <p>Transform your daily routine into a ritual of indulgence. Experience the artistry of fine perfumery with scents that evolve and adapt to your unique chemistry.</p>
             <button className="btn">Discover Our Story</button>
           </div>
@@ -343,7 +343,7 @@ export default function Home() {
 
         <details className={`${styles.faqDetails} reveal`}>
           <summary className={styles.faqSummary}>Is your packaging eco-friendly?</summary>
-          <p>Absolutely! We're committed to sustainability. All our bottles are made from 100% recycled glass and are fully recyclable. Our packaging uses FSC-certified paper and biodegradable materials, making it as beautiful for the planet as it is for you.</p>
+          <p>Absolutely! We&apos;re committed to sustainability. All our bottles are made from 100% recycled glass and are fully recyclable. Our packaging uses FSC-certified paper and biodegradable materials, making it as beautiful for the planet as it is for you.</p>
         </details>
 
         <details className={`${styles.faqDetails} reveal`}>
